@@ -14,5 +14,8 @@ class CardSet:
         self.cards.remove(cardTuple)
         return 'Card has been removed from set'
 
-    def searchForCard(self) -> str:
+    def searchForCard(self, *searchCard) -> str:
+        ''' Unfinished: must iterate through cards in "cards"
+        and compare each one with "searchCard" which is a tuple'''
+
         return 'Card (is/is not) in the set'
