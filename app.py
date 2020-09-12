@@ -25,10 +25,9 @@ class GameManager:
             new_card = self.players[(active_player+1) % 2].reply_to_fish(request)
             if new_card is None:
                 new_card = self.deck.draw()
+                replay = new_card == request
             self.players[active_player].addCard(new_card)
-            if new_card.value == request.value:
-                active_player -= 1
-            active_player = (active_player+1) % 2
+            active_player = (active_player+1) % 2 if not replay else active_player
         self.reportResults()
 
     def reportResults(self):
